@@ -3,6 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { CartPage } from '../pages/CartPage';
 import { CheckOutPage } from '../pages/CheckOutPage';
+import { ApiClient } from '../api/client/ApiClient';
 
 type Fixtures = {
   loginPage: LoginPage;
@@ -11,6 +12,7 @@ type Fixtures = {
   checkoutPage: CheckOutPage;
   username: string;
   password: string;
+  apiClient: ApiClient;
 };
 
 export const test = base.extend<Fixtures>({
@@ -37,6 +39,9 @@ export const test = base.extend<Fixtures>({
   checkoutPage: async ({ page }, use) => {
     await use(new CheckOutPage(page));
   },
+  apiClient: async ({ request }, use) => {
+    await use(new ApiClient(request));
+  }
 });
 
 export { expect } from '@playwright/test';
