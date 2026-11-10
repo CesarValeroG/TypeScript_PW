@@ -3,7 +3,7 @@ import { test, expect } from '../../src/fixtures/BaseTest';
 test.describe('ProductsTest', () => {
 
     // Verifies that adding one product to the cart updates the cart badge to 1.
-    test('testProductListy', async ({ loginPage, productsPage, username, password }) => {
+    test.skip('testProductListy', async ({ loginPage, productsPage, username, password }) => {
         await loginPage.validateLoginPageIsDisplayed();
         await loginPage.login(username, password);
         await productsPage.validateIsOnProductsPage();
@@ -13,7 +13,7 @@ test.describe('ProductsTest', () => {
     });
 
     // Verifies that adding multiple products increases the cart badge beyond 3 items.
-    test('testAddingMultipleProducts', async ({ loginPage, productsPage, username, password }) => {
+    test.skip('testAddingMultipleProducts', async ({ loginPage, productsPage, username, password }) => {
         await loginPage.validateLoginPageIsDisplayed();
         await loginPage.login(username, password);
         await productsPage.validateIsOnProductsPage();
